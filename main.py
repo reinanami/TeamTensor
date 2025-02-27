@@ -40,7 +40,7 @@ data = pd.read_csv(filePath)
 
 # Convert dataset to tensor format
 
-''' This is defaulted please modify as needed!'''
+''' This is defaulted please modify as needed! '''
 
 states = torch.tensor(data.iloc[:, :-1].values, dtype=torch.float32)
 
