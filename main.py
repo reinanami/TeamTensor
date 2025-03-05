@@ -13,27 +13,6 @@ test_image_folder = 'c2a-dataset/C2A_Dataset/new_dataset3/test/images'
 test_label_folder = 'c2a-dataset/C2A_Dataset/new_dataset3/test/labels'
 
 '''
-**************************************** PLEASE READ ****************************************************
-HOW TO HAVE ALL DEPENDENCIES INSTALLED:
-1. Go to your commandline
-2. Copy and paste this line: pip install torch torchvision opencv-python numpy matplotlib
-
-HOW TO GET YOUR KAGGLE INSTALLED:
-1. If you want to download this Kaggle training data: https://www.kaggle.com/c/111-1-ntut-dl-app-hw4/code
-2. Put it in dataset/human_detection_in_drone_videos
-3. Download this Kaggle training data as well: https://www.kaggle.com/datasets/rgbnihal/c2a-dataset
-4. Put it in dataset/human_deection_disaster_scenarios
-5. Modify the code as needed!
-
-# Documentation Links:
-# - PyTorch: https://pytorch.org/docs/stable/index.html
-# - OpenCV: https://docs.opencv.org/master/
-# - Matplotlib: https://matplotlib.org/stable/contents.html
-
-*********************************************************************************************************
-'''
-
-'''
 ************************* SIZE, PARAMETERS, LOSS FUNCTION, OPTIMIZATION *********************************
 '''
 # Load dataset function
@@ -113,6 +92,25 @@ if __name__ == "__main__":
     evaluate_model()
     run_camera()
 
+'''
+*********************************************************************************************************
+'''
+'''
+************************************************ MAIN ***************************************************
+'''
+if __name__ == "__main__":
+    print("Choose an option:")
+    print("1. Train the model")
+    print("2. Use the camera for real-time detection")
+    choice = input("Enter 1 or 2: ").strip()
+    
+    if choice == '1':
+        train_model()
+        evaluate_model()
+    elif choice == '2':
+        run_camera()
+    else:
+        print("Invalid input. Please enter 1 or 2.")
 '''
 *********************************************************************************************************
 '''
