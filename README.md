@@ -5,8 +5,7 @@ Run this in your command line after cloning this repository:
 ```pip install torch torchvision opencv-python numpy matplotlib```
 
 ## Kaggle Installation
-- https://www.kaggle.com/c/111-1-ntut-dl-app-hw4/code
-- https://www.kaggle.com/datasets/rgbnihal/c2a-dataset
+This program will use https://www.kaggle.com/c/111-1-ntut-dl-app-hw4/code for the datasets. The download link is here: https://www.kaggle.com/datasets/rgbnihal/c2a-dataset .
 
 # Documentation Links:
  - PyTorch: https://pytorch.org/docs/stable/index.html
