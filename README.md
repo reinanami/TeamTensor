@@ -1,9 +1,11 @@
-## Team Tensor
+# Team Tensor
 
 # Prerequisites
-Run this in your commandline after cloning this repository ```pip install torch torchvision opencv-python numpy matplotlib```
+## Pip Installation
+Run this in your commandline after cloning this repository 
+```pip install torch torchvision opencv-python numpy matplotlib```
 
-# Kaggle Installation
+## Kaggle Installation
 - https://www.kaggle.com/c/111-1-ntut-dl-app-hw4/code
 - https://www.kaggle.com/datasets/rgbnihal/c2a-dataset
 
