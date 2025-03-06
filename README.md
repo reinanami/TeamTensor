@@ -1,5 +1,3 @@
-# Team Tensor
-
 # Prerequisites
 ## Pip Installation
 Run this in your commandline after cloning this repository 
@@ -12,4 +10,4 @@ Run this in your commandline after cloning this repository
 # Documentation Links:
  - PyTorch: https://pytorch.org/docs/stable/index.html
  - OpenCV: https://docs.opencv.org/master/
- - Matplotlib: https://matplotlib.org/stable/contents.html
+ - Matplotlib: [https://matplotlib.org/stable/contents.html](https://matplotlib.org/stable/users/index.html)
