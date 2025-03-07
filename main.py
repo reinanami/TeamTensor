@@ -17,6 +17,22 @@ test_image_folder = 'c2a-dataset/C2A_Dataset/new_dataset3/test/images'
 test_label_folder = 'c2a-dataset/C2A_Dataset/new_dataset3/test/labels'
 
 '''
+************************ DEBUG/PATCH NOTES AS OF 03/07/2025 PLEASE READ *********************************
+
+# BROKEN YOLOV3: I'm not sure how to use YOLO V3 and I'm still learning so if someone could lend their
+# hand that would be so helpful
+
+# Broken Loss: I think this is related to the broken YOLOV3. Please try to replace the placeholder with
+# the actual YOLOV3 and send me the proper documentations because I am lost
+
+# Please get the tasks above done by 5 pm tonight or otherwise we are cooked.
+
+# ChatGPT is useless and unhelpful. Please rely on the documentations as much as we can!
+
+
+*********************************************************************************************************
+'''
+'''
 ************************* SIZE, PARAMETERS, LOSS FUNCTION, OPTIMIZATION *********************************
 '''
 # Model Parameters
@@ -27,16 +43,16 @@ LEARNING_RATE = 0.001
 
 torch.manual_seed(42)  # Ensuring consistent dataset generation
 
-# Dummy dataset loader (Replace with actual dataset loading logic)
+# HELP: Please modify the load dataset, I'm not sure how YOLO really works
 def load_dataset():
-    dataset_size = 100  # Placeholder
-    x_data = torch.rand((dataset_size, 3, *IMG_SIZE))  # Random images
-    y_data = torch.randint(0, 2, (dataset_size, 3, *IMG_SIZE), dtype=torch.float32)  # Binary targets
+    dataset_size = 100  # <- PLACEHOLDER
+    x_data = torch.rand((dataset_size, 3, *IMG_SIZE))  # Random Imges from the dataset
+    y_data = torch.randint(0, 2, (dataset_size, 3, *IMG_SIZE), dtype=torch.float32)  # Random binary targets
     x_data, y_data = x_data / 255.0, y_data  # Normalize input images
     dataset = TensorDataset(x_data, y_data)
     return DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
 
-# Simple YOLO-like CNN Model
+# HELP: Replace with YOLO because YOLO wasn't working I put a placeholder
 def build_yolov3():
     model = nn.Sequential(
         nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1),
@@ -49,7 +65,7 @@ def build_yolov3():
     return model
 
 # Initialize Model
-model = build_yolov3()
+model = build_yolov3() # HELP: Replace later
 optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
 loss_function = nn.BCELoss()
 
@@ -125,8 +141,8 @@ def run_camera():
 '''
 if __name__ == "__main__":
     print("Choose an option:")
-    print("1. Train the model")
-    print("2. Use the camera for real-time detection")
+    print("1. Train the model") # Do while training needs to be done
+    print("2. Use the camera for real-time detection") # Do after training, do not mess it up.
     choice = input("Enter 1 or 2: ").strip()
     
     if choice == '1':
