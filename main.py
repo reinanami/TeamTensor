@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from torch.utils.data import DataLoader
 from ultralytics import YOLO  # ADD: Import YOLO from ultralytics
-from yolov8 import detect_and_plot_bounding_box  # ADD: Import function from yolov8.py
+#from yolov8 import detect_and_plot_bounding_box  # ADD: Import function from yolov8.py
 
 torch.manual_seed(42)  # Ensuring consistent dataset generation
 
@@ -25,18 +25,7 @@ test_label_folder = 'c2a-dataset/C2A_Dataset/new_dataset3/test/labels'
 
 # ChatGPT is useless and unhelpful. Please rely on the documentations as much as we can!
 
-# Issues: [ WARN:0@2.771] global loadsave.cpp:268 findDecoder imread_('c2a-dataset/C2A_Dataset/new_dataset3/test/images/traffic_incident_image0153_3.png'): can't open/read file: check file path/integrity
-WARNING ⚠️ 'source' is missing. Using 'source=/home/<myusername>/.local/lib/python3.10/site-packages/ultralytics/assets'.
-
-Traceback (most recent call last):
-  File "/home/<myusername>/TeamTensor/main.py", line 10, in <module>
-    from yolov8 import detect_and_plot_bounding_box  # ADD: Import function from yolov8.py
-  File "/home/<myusername>/TeamTensor/yolov8.py", line 35, in <module>
-    detect_and_plot_bounding_box('c2a-dataset/C2A_Dataset/new_dataset3/test/images/traffic_incident_image0153_3.png')
-  File "/home/<myusername>/TeamTensor/yolov8.py", line 27, in detect_and_plot_bounding_box
-    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-cv2.error: OpenCV(4.11.0) /io/opencv/modules/imgproc/src/color.cpp:199: error: (-215:Assertion failed) !_src.empty() in function 'cvtColor'
-
+# Issue: RuntimeError: Dataset 'c2a-dataset/C2A_Dataset/new_dataset3/train/images' error ❌ 'c2a-dataset/C2A_Dataset/new_dataset3/train/images' does not exist
 
 *********************************************************************************************************
 '''
@@ -58,7 +47,7 @@ model = YOLO("yolov8n.pt")  # Load YOLOv8 nano model
 
 def train_model():
     print("Starting YOLOv8 training...")
-    model.train(data="c2a-dataset/C2A_Dataset/new_dataset3/dataset.yaml", epochs=EPOCHS)  # ADD: Train using YOLOv8 built-in function
+    model.train(data= train_image_folder, epochs=EPOCHS)  # ADD: Train using YOLOv8 built-in function
     print("Training complete!")
     model.save("yolov8_trained.pt")  # Save trained model
 
